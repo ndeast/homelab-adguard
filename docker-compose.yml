@@ -4,8 +4,8 @@ services:
         container_name: adguard
         restart: always
         volumes:
-            - '/mnt/configs/adguard/work:/opt/adguardhome/work'
-            - '/mnt/configs/adguard/conf:/opt/adguardhome/conf'
+            - '/var/lib/adguard/work:/opt/adguardhome/work'
+            - '/var/lib/adguard/conf:/opt/adguardhome/conf'
         ports:
             - '53:53/tcp'
             - '53:53/udp'

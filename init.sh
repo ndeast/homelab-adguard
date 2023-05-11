@@ -8,9 +8,11 @@ curl -sSL https://get.docker.com/ | sh
 
 useradd -m -u 1012 -s /usr/bin/bash adguard
 
-chown -R adguard:adguard /mnt/configs/adguard
+mkdir -p /var/lib/adguard/conf
+mkdir -p /var/lib/adguard/work
 
-(crontab -l 2>/dev/null; echo "5 3 * * SUN /root/homelab-adguard/backup.sh") | crontab -
+chown -R adguard:adguard /var/lib/adguard
+
 
 docker compose pull
 docker compose up
